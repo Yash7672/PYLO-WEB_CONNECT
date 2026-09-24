@@ -21,6 +21,7 @@ export default function Home({ session }) {
           {hasDownloadUrl() ? (
             <a
               href={DOWNLOAD_URL}
+              download
               className="btn btn--primary btn--lg"
             >
               Download App
