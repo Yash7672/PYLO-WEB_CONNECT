@@ -12,29 +12,41 @@ export default function Home({ session }) {
         <Logo size="large" />
 
         <h1 className="home__tagline">Your tasks. Anywhere.</h1>
-        <p className="home__subline">Stay organized across your PYLO app and web dashboard.</p>
+
+        <p className="home__subline">
+          Stay organized across your PYLO app and web dashboard.
+        </p>
 
         <div className="home__actions">
           {hasDownloadUrl() ? (
             <a
               href={DOWNLOAD_URL}
               className="btn btn--primary btn--lg"
-              download
             >
               Download App
             </a>
           ) : (
-            <button type="button" className="btn btn--primary btn--lg" disabled>
+            <button
+              type="button"
+              className="btn btn--primary btn--lg"
+              disabled
+            >
               Download App
             </button>
           )}
 
           {session ? (
-            <Link to="/dashboard" className="btn btn--outline btn--lg">
+            <Link
+              to="/dashboard"
+              className="btn btn--outline btn--lg"
+            >
               Dashboard
             </Link>
           ) : (
-            <Link to="/login" className="btn btn--outline btn--lg">
+            <Link
+              to="/login"
+              className="btn btn--outline btn--lg"
+            >
               Login
             </Link>
           )}
