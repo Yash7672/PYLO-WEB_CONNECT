@@ -18,8 +18,6 @@ export default function Home({ session }) {
           {hasDownloadUrl() ? (
             <a
               href={DOWNLOAD_URL}
-              target="_blank"
-              rel="noopener noreferrer"
               className="btn btn--primary btn--lg"
             >
               Download App

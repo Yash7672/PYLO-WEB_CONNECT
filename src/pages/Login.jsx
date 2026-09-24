@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import ThemeToggle from '../components/ThemeToggle';
+import PasswordField from '../components/PasswordField';
 import { signInWithEmail } from '../services/authService';
 
 export default function Login() {
@@ -93,24 +94,14 @@ export default function Login() {
             ) : null}
           </div>
 
-          <div className="field">
-            <label className="field__label" htmlFor="password">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              autoComplete="current-password"
-              className={`field__input${fieldErrors.password ? ' field__input--error' : ''}`}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            {fieldErrors.password ? (
-              <p className="field__error" role="alert">
-                {fieldErrors.password}
-              </p>
-            ) : null}
-          </div>
+          <PasswordField
+            id="password"
+            label="Password"
+            autoComplete="current-password"
+            error={fieldErrors.password}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
           {error ? (
             <p className="login__error" role="alert">
