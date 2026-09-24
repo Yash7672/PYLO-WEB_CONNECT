@@ -19,6 +19,7 @@ export default function Home({ session }) {
             <a
               href={DOWNLOAD_URL}
               className="btn btn--primary btn--lg"
+              download
             >
               Download App
             </a>
