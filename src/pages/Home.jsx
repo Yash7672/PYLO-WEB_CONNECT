@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import ThemeToggle from '../components/ThemeToggle';
-import { hasDownloadUrl, DOWNLOAD_URL } from '../config';
 
 export default function Home({ session }) {
   return (
@@ -18,25 +17,12 @@ export default function Home({ session }) {
         </p>
 
         <div className="home__actions">
-          {hasDownloadUrl() ? (
-            <a
-              href={DOWNLOAD_URL}
-              className="btn btn--primary btn--lg"
-              download
-              target="_self"
-              rel="noopener noreferrer"
-            >
-              Download App
-            </a>
-          ) : (
-            <button
-              type="button"
-              className="btn btn--primary btn--lg"
-              disabled
-            >
-              Download App
-            </button>
-          )}
+          <a
+            href="/download"
+            className="btn btn--primary btn--lg"
+          >
+            Download App
+          </a>
 
           {session ? (
             <Link
@@ -54,12 +40,6 @@ export default function Home({ session }) {
             </Link>
           )}
         </div>
-
-        {!hasDownloadUrl() ? (
-          <p className="home__note">
-            Download link will appear once VITE_PYLO_DOWNLOAD_URL is set.
-          </p>
-        ) : null}
       </div>
     </div>
   );
