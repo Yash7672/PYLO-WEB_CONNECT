@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import ThemeToggle from '../components/ThemeToggle';
 
-// Configured in .env / the host dashboard; falls back to the /download redirect.
-const DOWNLOAD_URL = (import.meta.env.VITE_PYLO_DOWNLOAD_URL || '').trim() || '/download';
+// Keep this relative: public/_redirects is the single source of truth for the
+// APK location, so a stale env var can't point users at a dead release.
+const DOWNLOAD_URL = '/download';
 
 export default function Home({ session }) {
   return (
