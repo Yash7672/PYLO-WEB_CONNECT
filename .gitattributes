@@ -1,0 +1,3 @@
+# Keep Netlify redirect rules LF-only; CRLF can break rule parsing on some hosts.
+public/_redirects text eol=lf
+.env.example text eol=lf

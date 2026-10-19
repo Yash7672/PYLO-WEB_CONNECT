@@ -2,6 +2,9 @@ import { Link } from 'react-router-dom';
 import Logo from '../components/Logo';
 import ThemeToggle from '../components/ThemeToggle';
 
+// Configured in .env / the host dashboard; falls back to the /download redirect.
+const DOWNLOAD_URL = (import.meta.env.VITE_PYLO_DOWNLOAD_URL || '').trim() || '/download';
+
 export default function Home({ session }) {
   return (
     <div className="home">
@@ -18,7 +21,7 @@ export default function Home({ session }) {
 
         <div className="home__actions">
           <a
-            href="/download"
+            href={DOWNLOAD_URL}
             className="btn btn--primary btn--lg"
           >
             Download App
