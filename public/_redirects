@@ -1,7 +1,2 @@
-# /download -> the real APK (GitHub release v1.0.0).
-# When you publish a new APK, bump the tag in the URL below and redeploy.
-/download    https://github.com/Yash7672/PYLO-WEB_CONNECT/releases/download/v1.0.0/app-release.apk    302
-
-# SPA fallback: let React Router handle client-side routes (/login, /dashboard, ...)
-# Must stay below the /download rule so the APK redirect wins.
-/*           /index.html                                                                             200
+/download    https://github.com/Yash7672/PYLO-ML-WEB_CONNECT/releases/download/v1.0.0/app-release.apk    302
+/*           /index.html    200
